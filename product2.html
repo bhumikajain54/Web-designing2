@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #3cb043;
+            color: white;
+        }
+        
+        .logo h1 {
+            margin: 0;
+        }
+        
+        .search-bar input {
+            padding: 5px;
+            width: 300px;
+        }
+        
+        .icons button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        
+        .banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+        }
+        
+        .banner img {
+            width: 100%;
+            max-width: 1000px;
+        }
+        
+        .flash-deal {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .flash-deal h1 {
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .product-card {
+            width: 200px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: pink;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            object-fit: cover;
+        }
+        
+        .product-card h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        
+        .product-card p {
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .product-card button {
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .product-card button a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .product-card button:hover {
+            background-color: #c2185b;
+        }
+        
+        .product-card div rup {
+            font-size: 3px;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 2px;
+            font-size: 5px;
+        }
+        
+        .containerproductcardheader {
+            border-radius: 4px;
+            background-color: #e91e63;
+            height: 20px;
+            color: white;
+        }
+        
+        .topic h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #36454F;
+            font-size: 20px;
+        }
+        
+        .topic2 h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #36454F;
+            margin-left: 50px;
+            font-size: 20px;
+        }
+        /* Container 2 */
+        
+        .container2 {
+            display: flex;
+            background-color: white;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        
+        .box {
+            background-color: white;
+            margin-left: 30px;
+        }
+        
+        .box img {
+            height: 200px;
+            width: 200px;
+            border: 2px solid lightgray;
+            border-radius: 15px 15px 15px 15px;
+        }
+        
+        .box h2 {
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #404040;
+        }
+        /* Footer */
+        
+        footer {
+            background-color: #fafafa;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .container3 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+        }
+        
+        .footer-section {
+            flex: 1;
+            padding: 10px;
+            margin-bottom: 20px;
+            /* Add margin-bottom to create gap between sections */
+        }
+        
+        .footer-section h4 {
+            margin-top: 0;
+            color: #4D822B;
+            font-family: Roboto, sans-serif;
+            margin-bottom: 8px;
+        }
+        
+        .footer-section p {
+            margin: 5px 0;
+        }
+        
+        .footer-social {
+            flex-basis: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .footer-social a {
+            display: flex;
+            flex-wrap: wrap;
+            text-decoration: none;
+            color: #4D822B;
+            font-size: 20px;
+        }
+        
+        .footer-social a:hover {
+            color: #2b5d1b;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            text-align: center;
+            padding-top: 10px;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 20px;
+            color: #666;
+        }
+        
+        @media screen and (max-width: 600px) {
+            body {
+                background-color: white;
+            }
+            .footer-section {
+                flex-basis: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>VegEase</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search Products...">
+        </div>
+        <div class="icons">
+            <button class="cart">🛒</button>
+            <button class="profile">👤</button>
+        </div>
+    </header>
+
+    <div class="banner">
+        <img src="img/1711527206968_sfwcx.jpg" alt="Banner Image">
+    </div>
+
+    <section class="flash-deal">
+        <h1>Flash Deal: Lowest Price Guaranteed</h1>
+        <div class="container">
+            <div class="product-card">
+                <div class="containerproductcardheader">9 Hra 2 min left</div>
+                <img src="img/product-image.jpg" alt="Palak">
+                <h2>Palak</h2>
+                <p>Rs 99.99</p>
+                <div class="rup">1 kg</div>
+                <button><a href="#">Add to Cart</a></button>
+            </div>
+            <div class="product-card">
+                <div class="containerproductcardheader">9 Hra 2 min left</div>
+                <img src="img/product1-image.jpg" alt="Tender Coconut">
+                <h2>Tender Coconut</h2>
+                <p>Rs 56</p>
+                <div class="rup">1 Piece</div>
+                <button><a href="#">Add to Cart</a></button>
+            </div>
+            <div class="product-card">
+                <div class="containerproductcardheader">9 Hra 2 min left</div>
+                <img src="img/product2-image.jpg" alt="Banana Premium">
+                <h2>Banana Premium</h2>
+                <p>Rs 25</p>
+                <div class="rup">500 Gm</div>
+                <button><a href="#">Add to Cart</a></button>
+            </div>
+            <div class="product-card">
+                <div class="containerproductcardheader"> 9 Hra 2 min left</div>
+                <img src="img/f6.png" alt="Desi Tomato">
+                <h2>Desi Tomato</h2>
+                <p>Rs 49</p>
+                <div class="rup">1 kg</div>
+                <button><a href="#">Add to Cart</a></button>
+            </div>
+            <div class="product-card">
+                <div class="containerproductcardheader">9 Hra 2 min left</div>
+                <img src="img/product4-image.jpg" alt="Bottle Gourd">
+                <h2>Bottle Gourd (1pc)</h2>
+                <p>Rs 15</p>
+                <div class="rup">1 Piece</div>
+                <button><a href="#">Add to Cart</a></button>
+            </div>
+            <div class="product-card">
+                <div class="containerproductcardheader">9 Hra 2 min left</div>
+                <img src="img/product5-image.jpg" alt="Mango Chausa">
+                <h2>Mango Chausa</h2>
+                <p>Rs 58</p>
+                <div class="rup">1 kg</div>
+                <button><a href="#">Add to Cart</a></button>
+            </div>
+        </div>
+    </section>
+    <div class="topic2">
+        <h2>Shop By Category</h2>
+    </div>
+    <div class="container2">
+        <div class="box">
+            <img src="img/1702381916317_T4paY.png" alt="Exotic Fruits">
+            <h2 align="center">Exotic Fruits</h2>
+        </div>
+        <div class="box">
+            <img src="img/1702382008508_99HZx.png" alt="Exotic Vegetable">
+            <h2 align="center">Exotic Vegetable</h2>
+        </div>
+        <div class="box">
+            <img src="img/fruits.png" alt="Fresh Fruits">
+            <h2 align="center">Fresh Fruits</h2>
+        </div>
+        <div class="box">
+            <img src="img/1703151220607_8qhRB.png" alt="Fresh Mangoes">
+            <h2 align="center">Fresh Mangoes</h2>
+        </div>
+        <div class="box">
+            <img src="img/1702382159544_y2Dmx.png" alt="Fresh Vegetable">
+            <h2 align="center">Fresh Vegetable</h2>
+        </div>
+        <div class="box">
+            <img src="img/1711522836530_cEJtT.png" alt="Leaf & Herbs">
+            <h2 align="center">Leaf & Herbs</h2>
+        </div>
+    </div>
+    <footer class="container3">
+        <div class="footer-section footer-contact">
+            <h4>Contact Us</h4>
+            <p>Email: support@Vegeases.in</p>
+            <p>Phone: +91 8888399994</p>
+            <p>Address: 5th Floor, 362-363, Rao Gajraj Singh Marg, Phase IV, Udyog Vihar, Sector 18, Gurugram, Haryana 122016</p>
+        </div>
+        <div class="footer-section footer-company">
+            <h4>Company</h4>
+            <p>About</p>
+            <p>Media Coverage</p>
+            <p>Blog</p>
+        </div>
+        <div class="footer-section footer-for-you">
+            <h4>For You</h4>
+            <p>Contact Us</p>
+            <p>Privacy Policy</p>
+            <p>Terms And Conditions</p>
+        </div>
+        <div class="footer-section footer-location">
+            <h4>Location</h4>
+            <p>Dwarka</p>
+            <p>Gurgaon</p>
+            <p>Noida</p>
+        </div>
+        <div class="footer-section footer-social">
+            <div class="footer-social">
+                <a href="#"><img src="img/facebook.png" alt="Facebook" width="50px" height="50px"></a>
+                <a href="#"><img src="img/twitter.png" alt="Twitter" width="50px" height="50px"></a>
+                <a href="#"><img src="img/instagram.png" alt="Instagram" width="50px" height="50px"></a>
+                <a href="#"><img src="img/Youtude.png" alt="YouTube" width="50px" height="50px"></a>
+                <a href="#"><img src="img/Linkedin.png" alt="Linkedin" width="50px" height="50px"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 VegEase. All rights reserved.</p>
+        </div>
+
+    </footer>
+</body>
+
+</html>
